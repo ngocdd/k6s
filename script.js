@@ -8,9 +8,9 @@ export const options = {
   // duration: "120s",
 
   stages: [
-    { duration: "10s", target: 100 }, // traffic ramp-up from 1 to 100 users over 5 minutes.
-    { duration: "30s", target: 100 }, // stay at 100 users for 30 minutes
-    // { duration: "10s", target: 0 }, // ramp-down to 0 users
+    { duration: "1m", target: 500 }, // traffic ramp-up from 1 to 100 users over 5 minutes.
+    { duration: "10m", target: 500 }, // stay at 100 users for 30 minutes
+    { duration: "1m", target: 0 }, // ramp-down to 0 users
   ],
 };
 
@@ -21,7 +21,7 @@ export const options = {
 //
 export default function () {
   http.get(
-    "https://be.qablogs.io.vn/api/v1/exchange-rate?date=2023-12-12&code=2023-12-30"
+    "https://be.qablogs.io.vn/api/v1/top-sell-buy?startDate=2023-01-01&endDate=2023-01-10"
   );
   sleep(1);
 }
